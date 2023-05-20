@@ -1,0 +1,42 @@
+baseURL: https://sh.web3yoda.dev
+languageCode: zh
+defaultContentLanguage: zh
+title: Developer Cheatsheet
+
+disableKinds:
+- taxonomyTerm
+
+# Code higlighting settings
+pygmentsCodefences: true
+pygmentsCodeFencesGuesSsyntax: false
+pygmentsOptions: ""
+pygmentsStyle: "monokai"
+pygmentsUseClasses: false
+
+markup:
+  goldmark:
+    parser:
+      autoHeadingIDType: "github-ascii"
+    renderer:
+      unsafe: true
+
+module: 
+  imports:
+  - path: github.com/bep/docuapi/v2
+
+params:
+  search: true
+  maxMenuDepth: 3 
+  language_tabs:
+  - key: shell
+    name: Shell
+  - key: golang
+    name: Golang
+
+languages:
+  en:
+    languageName: English
+    weight: 1
+  zh:
+    languageName: 简体中文
+    weight: 2

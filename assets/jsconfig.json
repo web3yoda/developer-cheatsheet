@@ -1,0 +1,12 @@
+{
+ "compilerOptions": {
+  "baseUrl": ".",
+  "paths": {
+   "*": [
+    "../../../../../../var/folders/7n/xd_twwhd1qsf72tjn5b3l3jh0000gq/T/hugo_cache/modules/filecache/modules/pkg/mod/github.com/bep/docuapi/v2@v2.3.0/assets/*",
+    "../../../../../../var/folders/7n/xd_twwhd1qsf72tjn5b3l3jh0000gq/T/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/alpinejs/v3@v3.21000.20300/packages/*",
+    "../../../../../../var/folders/7n/xd_twwhd1qsf72tjn5b3l3jh0000gq/T/hugo_cache/modules/filecache/modules/pkg/mod/github.com/olivernn/lunr.js@v2.3.9+incompatible/lunr.js/*"
+   ]
+  }
+ }
+}
