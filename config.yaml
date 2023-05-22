@@ -2,6 +2,8 @@ languageCode: zh
 defaultContentLanguage: zh
 title: Developer Cheatsheet
 
+googleAnalytics: G-J3NCP3DPFH
+
 disableKinds:
 - taxonomyTerm
 
