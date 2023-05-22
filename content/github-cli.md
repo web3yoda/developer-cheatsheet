@@ -51,4 +51,7 @@ gh auth status
 github.com
   ✓ Logged in to github.com as web3yoda (/Users/user/.config/.gh2/hosts.yml)
   ...
+
+# gh可以通过GH_CONFIG_DIR切换用户session了，但是 git还不能，可以这样切换，让git使用第2个用户的token
+gh auth setup-git
 ```

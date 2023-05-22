@@ -24,3 +24,4 @@ go.work
 .hugo_build.lock
 public
 node_modules
+.vscode
