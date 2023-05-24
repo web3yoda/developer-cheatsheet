@@ -15,5 +15,8 @@ echo `date +%s`$RANDOM | sha256sum | base64 | head -c16; echo
 NzY5YjgxMDc1OTFl
 ```
 
-> 
+> 一条命令下载tar.gz包并解压到指定目录 还可以去掉打包父目录
+```shell
+curl -s https://gethstore.blob.core.windows.net/builds/geth-alltools-linux-amd64-1.11.6-ea9e62ca.tar.gz |  tar xzf - -C /usr/local/bin/ --strip-components=1
+```
 
