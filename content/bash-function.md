@@ -31,10 +31,22 @@ pw npm install
 
 * 只对单个命令设置 http_proxy https_proxy all_proxy no_proxy 代理环境变量，避免了忘记set，或者set了以后忘记 unset
 
-> hi
+> 有时候写bash脚本需要做到跨平台，需要判断当前os是那种
 
 ```shell
 
-echo HI
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+        # ...
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+        # Mac OSX
+elif [[ "$OSTYPE" == "cygwin" ]]; then
+        # cygwin for Windows
+elif [[ "$OSTYPE" == "msys" ]]; then
+        # MinGW for Windows 
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
+        # freebsd
+else
+        # Unknown.
+fi
 
 ```

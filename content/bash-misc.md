@@ -15,8 +15,16 @@ echo `date +%s`$RANDOM | sha256sum | base64 | head -c16; echo
 NzY5YjgxMDc1OTFl
 ```
 
-> 一条命令下载tar.gz包并解压到指定目录 还可以去掉打包父目录
+> 一条命令下载tar.gz包并解压到指定目录 还可以去掉打包父目录, dockerfile里常用
 ```shell
-curl -s https://gethstore.blob.core.windows.net/builds/geth-alltools-linux-amd64-1.11.6-ea9e62ca.tar.gz |  tar xzf - -C /usr/local/bin/ --strip-components=1
+curl -s https://gethstore.blob.core.windows.net/builds/geth-alltools-linux-amd64-1.11.6-ea9e62ca.tar.gz \
+    | tar xzf - -C /usr/local/bin/ --strip-components=1
 ```
 
+> 跑一个循环间隔1s检查一个服务是否启动成功
+
+```shell
+
+while true; do curl http://localhost:8080 >/dev/null && break; sleep 1; done
+
+```

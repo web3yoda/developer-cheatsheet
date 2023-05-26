@@ -13,4 +13,6 @@ export AWS_PROFILE=PROFILE_NAME
 # 查看当前role
 aws sts get-caller-identity
 
+
+
 ```
