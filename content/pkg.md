@@ -1,7 +1,7 @@
 ---
 weight: 80
-title: Package Manager
+title: pkg manager
 ---
 
-# Package Manager
+# pkg manager
 

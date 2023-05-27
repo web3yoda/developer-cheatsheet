@@ -15,8 +15,9 @@ title: openssl
 
 > 查看服务器证书
 
-```bash
+```shell
 
-openssl s_client -showcerts -servername httpbin.org -connect httpbin.org:443 </dev/null
+openssl s_client -showcerts -servername httpbin.org \
+    -connect httpbin.org:443 </dev/null
 
 ```

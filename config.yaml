@@ -31,8 +31,6 @@ params:
   language_tabs:
   - key: shell
     name: Shell
-  - key: golang
-    name: Golang
 
 languages:
   en:

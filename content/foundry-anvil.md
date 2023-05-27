@@ -7,7 +7,7 @@ title: anvil
 
 anvil是foundry开发套件中的工具，定位跟 hardhat node一样是一个简易的本地开发用的eth节点，功能也类似，但是用rust编写，安装使用非常方便，启动速度也非常快
 
-启动后默认使用 助记词 `test test test test test test test test test test test junk` 推导出一些账号，并已经重置，可以直接使用
+启动后默认使用 助记词 `test test test test test test test test test test test junk` 推导出一些账号，并已经充值，可以直接使用
 
 > 快速启动一个ETH节点
 ```shell

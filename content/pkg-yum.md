@@ -1,9 +1,9 @@
 ---
 weight: 81
-title: yum & rpm
+title: yum and rpm
 ---
 
-## yum & rpm
+## yum rpm
 
 两个命令定位的关系与区别
 * rpm用来管理本OS的包数据库信息，例如安装一个下载好的.rpm包, 删除一个rpm包，查看该包在本系统的信息
