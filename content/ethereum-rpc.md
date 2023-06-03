@@ -50,5 +50,18 @@ done
 17325970
 17326018
 
+# 查看account余额
+curl https://rpc.ankr.com/eth_goerli -s -H "Content-Type: application/json" \
+    -d '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266", "latest"],"id":1}' \
+    | jq -r .result \
+    | xargs printf '%d\n'
+1019489700994
+
+# 查看account nounce
+curl https://rpc.ankr.com/eth_goerli -s -H "Content-Type: application/json" \
+    -d '{"jsonrpc":"2.0","method":"eth_getTransactionCount","params":["0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266", "latest"],"id":1}' \
+    | jq -r .result \
+    | xargs printf '%d\n'
+6503
 # 
 ```
