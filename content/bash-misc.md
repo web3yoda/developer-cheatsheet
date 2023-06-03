@@ -28,3 +28,29 @@ curl -s https://gethstore.blob.core.windows.net/builds/geth-alltools-linux-amd64
 while true; do curl http://localhost:8080 >/dev/null && break; sleep 1; done
 
 ```
+
+> parameter substitution https://tldp.org/LDP/abs/html/parameter-substitution.html
+
+```shell
+
+$ a='hello:world'
+
+$ b=${a%:*}
+$ echo "$b"
+hello
+
+$ a='hello:world:of:tomorrow'
+
+$ echo "${a%:*}"
+hello:world:of
+
+$ echo "${a%%:*}"
+hello
+
+$ echo "${a#*:}"
+world:of:tomorrow
+
+$ echo "${a##*:}"
+tomorrow
+
+```
