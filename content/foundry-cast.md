@@ -220,8 +220,7 @@ type
 # 再次观察余额, 账号0花了1000加一点点手续费，账号1收到1000
 cast b 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266 | cast fw
 8999.999916000000000000
-(⎈|qa-bitnetwork-eks:N/A) ~ 
-➜  cast b 0x70997970c51812dc3a010c7d01b50e0d17dc79c8 | cast fw
+cast b 0x70997970c51812dc3a010c7d01b50e0d17dc79c8 | cast fw
 11000.000000000000000000
 
 # 查看高度
@@ -286,6 +285,7 @@ cast call 0x5FbDB2315678afecb367f032d93F642f64180aa3 "balanceOf(address)(uint256
 # 最常用hex转decimal
 echo 0xa | xargs cast 2d
 
+
 ```
 
 > 钱包操作
@@ -312,5 +312,41 @@ cast k 'transfer(address,uint256)'
 # 4byte解码出方法签名
 cast 4b 0xa9059cbb
 transfer(address,uint256)
+
+```
+
+> 理解nonce 以及合约地址如何生成。nounce是账号交易计数器，保存在state里面，目的防止双重支付
+
+```shell
+# 启动一个新的anvil
+anvil -a 2
+
+# 查看账号0的nounce
+cast n 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+0
+
+# 部署合约(用的hardhat 0号账号)
+npx hardhat run scripts/deployMySimpleToken.ts --network localhost
+Deployed 0x5FbDB2315678afecb367f032d93F642f64180aa3
+
+# 查看nounce变为1
+cast n 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266                 
+1
+
+# 相同合约再部署一次，合约是一个新地址
+npx hardhat run scripts/deployMySimpleToken.ts --network localhost
+Deployed 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
+
+# 查看nounce变为2
+cast n 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266                 
+2
+
+# 合约地址仅和address和nounce有关，因此可以提前计算出来
+cast ca 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+Computed Address: 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
+
+# 再部署一次看看是否为0x9f
+npx hardhat run scripts/deployMySimpleToken.ts --network localhost
+Deployed 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
 
 ```
