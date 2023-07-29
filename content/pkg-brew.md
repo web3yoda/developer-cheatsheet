@@ -53,3 +53,36 @@ node-build                node@10                   node@16 ✔                 
 brew unlink node
 brew link node@16
 ```
+
+> 安装gnu版工具替换macos版
+
+```shell
+brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep
+```
+
+> 安装程序员必备工具
+
+```shell
+# tools
+brew install gh git jq yq bash screen autossh netcat websocat telnet tree curl grpcurl wget htop pstree 
+brew install nginx wrk gum tcpdump nmap
+
+# databases
+brew install redis sqlite mysql-client@5.7 mysql@5.7 postgresql@15
+```
+
+> 安装常用开发语言sdk
+```shell
+
+```
+
+> 安装云计算工程师必备工具
+```shell
+brew install kubernetes-cli kubectx kube-ps1 helm k3d awscli session-manager-plugin
+```
+
+> 安装区块链工程师必备工具
+
+```shell
+brew install ethereum
+```
