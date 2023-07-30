@@ -65,24 +65,26 @@ brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-geto
 ```shell
 # tools
 brew install gh git jq yq bash screen autossh netcat websocat telnet tree curl grpcurl wget htop pstree 
-brew install nginx wrk gum tcpdump nmap
+brew install nginx wrk gum tcpdump nmap macvim gomplate
 
 # databases
-brew install redis sqlite mysql-client@5.7 mysql@5.7 postgresql@15
+brew install redis redisinsight redis-leveldb sqlite mysql-client@5.7 mysql@5.7 postgresql@15
 ```
 
 > 安装常用开发语言sdk
 ```shell
 
+brew install node@16 go@1.19 python@3.10 openjdk@17
+
 ```
 
-> 安装云计算工程师必备工具
+> 安装devops工程师必备工具
 ```shell
-brew install kubernetes-cli kubectx kube-ps1 helm k3d awscli session-manager-plugin
+brew install kubernetes-cli kubectx kube-ps1 helm k3d awscli session-manager-plugin google-cloud-sdk
 ```
 
 > 安装区块链工程师必备工具
 
 ```shell
-brew install ethereum
+brew install ethereum lighthouse
 ```
