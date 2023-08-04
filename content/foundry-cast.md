@@ -350,3 +350,18 @@ npx hardhat run scripts/deployMySimpleToken.ts --network localhost
 Deployed 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
 
 ```
+
+> 查看 eip1967 proxy的实现 和 admin
+```shell
+ProxyFooAddress=0x
+# cast keccak eip1967.proxy.implementation - 1
+_IMPLEMENTATION_SLOT=0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc
+# get implementation of a proxy
+cast storage ${ProxyFooAddress} ${_IMPLEMENTATION_SLOT}
+
+# cast keccak eip1967.proxy.admin - 1
+export _ADMIN_SLOT=0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103
+# get admin of a proxy
+cast storage ${ProxyFooAddress} ${_ADMIN_SLOT}
+
+```
