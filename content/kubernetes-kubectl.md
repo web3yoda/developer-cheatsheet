@@ -137,3 +137,21 @@ kubectl patch deployment nginx --type='json' -p='[{"op": "replace", "path": "/sp
 kubectl set image deployment/nginx nginx=nginx:1.21 
 
 ```
+
+> 从标准输出apply一个yaml文件
+
+```shell
+kubectl apply -f - <<EOF
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-sleep
+spec:
+  containers:
+  - name: busybox
+    image: busybox:1.28
+    args:
+    - sleep
+    - infinity
+EOF
+```
