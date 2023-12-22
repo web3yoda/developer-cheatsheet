@@ -155,3 +155,26 @@ spec:
     - infinity
 EOF
 ```
+
+> 滚动方式重启一个deployment
+
+会先起新pod，ready之后再删旧pod，比较安全
+
+```shell
+kubectl -n default rollout restart deploy nginx 
+```
+
+> 通过kubectl在本地和容器之间传输文件
+
+```shell
+# cp to /tmp
+kubectl cp /tmp/hello.txt debugger-0:/tmp/hello.txt
+# cp to current workDir
+kubectl cp /tmp/hello.txt debugger-0:hello.txt
+
+# check
+kubectl exec -it debugger-0 -- sh -c " pwd && ls -lh && ls /tmp -lh && cat hello.txt "
+
+kubectl cp debugger-0:/tmp/hello.txt /tmp/world.txt
+tar: removing leading '/' from member names # this is fine
+```
