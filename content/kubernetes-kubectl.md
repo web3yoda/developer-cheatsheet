@@ -178,3 +178,17 @@ kubectl exec -it debugger-0 -- sh -c " pwd && ls -lh && ls /tmp -lh && cat hello
 kubectl cp debugger-0:/tmp/hello.txt /tmp/world.txt
 tar: removing leading '/' from member names # this is fine
 ```
+
+> 将pod/service等端口映射到本地
+
+```shell
+kubectl port-forward mongo-75f59d57f4-4nd6q 28015:27017
+
+kubectl port-forward pods/mongo-75f59d57f4-4nd6q 28015:27017
+
+kubectl port-forward deployment/mongo 28015:27017
+
+kubectl port-forward replicaset/mongo-75f59d57f4 28015:27017
+
+kubectl port-forward service/mongo 28015:27017
+```
