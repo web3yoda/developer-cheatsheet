@@ -11,8 +11,11 @@ title: misc
 
 ```shell
 echo `date +%s`$RANDOM | sha256sum | base64 | head -c16; echo
-
 NzY5YjgxMDc1OTFl
+
+openssl rand -hex 32 | base64 | head -c32
+Mzg4ZjcwZTAyYThkZTBkNjdjYmYwYTNk
+
 ```
 
 > 一条命令下载tar.gz包并解压到指定目录 还可以去掉打包父目录, dockerfile里常用
