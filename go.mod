@@ -1,5 +1,5 @@
 module github.com/web3yoda/useful-shell-commands
 
-go 1.19
+go 1.25
 
-require github.com/bep/docuapi/v2 v2.3.0 // indirect
+require github.com/bep/docuapi/v2 v2.4.2 // indirect

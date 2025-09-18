@@ -5,7 +5,7 @@ title: Developer Cheatsheet
 googleAnalytics: G-J3NCP3DPFH
 
 disableKinds:
-- taxonomyTerm
+- taxonomy
 
 # Code higlighting settings
 pygmentsCodefences: true
