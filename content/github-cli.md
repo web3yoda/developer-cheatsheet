@@ -61,6 +61,14 @@ export GH_CONFIG_DIR=${HOME}/.config/.gh2; gh auth setup-git
 # 操作完后，切换回主账户
 unset GH_CONFIG_DIR; gh auth setup-git
 
+# 也可以通过 git switch切换不同user
+
+git auth switch
+
+git auth status
+
+git auth setup-git
+
 ```
 
 > gh 触发一个支持 workflow_dispatch 的action workflow
