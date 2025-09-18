@@ -15,7 +15,7 @@ title: function
 cat <<EOF > /tmp/pw
 #!/bin/zsh
 export http_proxy=http://127.0.0.1:1080 https_proxy=http://127.0.0.1:1080 all_proxy=socks5://127.0.0.1:1087 no_proxy=10.0.0.0/8,127.0.0.1,localhost
-"$@"
+"\$@"
 unset http_proxy https_proxy all_proxy no_proxy
 EOF
 

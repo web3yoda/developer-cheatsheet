@@ -63,11 +63,11 @@ unset GH_CONFIG_DIR; gh auth setup-git
 
 # 也可以通过 git switch切换不同user
 
-git auth switch
+gh auth switch
 
-git auth status
+gh auth status
 
-git auth setup-git
+gh auth setup-git
 
 ```
 
