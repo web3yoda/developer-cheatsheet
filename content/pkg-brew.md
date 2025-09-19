@@ -44,7 +44,7 @@ HOMEBREW_NO_AUTO_UPDATE=1 brew install cowsay
 
 ```shell
 # 同时安装了node@14 node@16
-pxyw brew search /^node/ 
+pw brew search /^node/ 
 ==> Formulae
 node ✔                    node-sass                 node@14 ✔                 node@18
 node-build                node@10                   node@16 ✔                 node_exporter ✔
@@ -64,8 +64,8 @@ brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-geto
 
 ```shell
 # tools
-brew install gh git jq yq bash screen autossh netcat websocat telnet tree curl grpcurl wget htop pstree 
-brew install nginx wrk gum tcpdump nmap macvim gomplate sha3sum
+brew install gh git jq yq bash screen autossh netcat websocat telnet tree curl grpcurl wget rar htop pstree
+brew install nginx wrk gum tcpdump nmap macvim gomplate go-task sha3sum hugo
 
 # databases
 brew install redis redisinsight redis-leveldb sqlite mysql-client@5.7 mysql@5.7 postgresql@15
@@ -86,5 +86,5 @@ brew install kubernetes-cli kubectx kube-ps1 helm k3d awscli session-manager-plu
 > 安装区块链工程师必备工具
 
 ```shell
-brew install ethereum lighthouse sha3sum
+brew install foundry ethereum lighthouse sha3sum
 ```

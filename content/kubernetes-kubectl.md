@@ -156,6 +156,39 @@ spec:
 EOF
 ```
 
+> 一条命令创建一个pgclient pod
+
+```shell
+
+kubectl apply -f - <<EOF
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: pgclient
+spec:
+  serviceName: pgclient
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pgclient
+  template:
+    metadata:
+      labels:
+        app: pgclient
+    spec:
+      containers:
+      - name: pgclient
+        image: postgres:14-bookworm
+        command:
+        - sleep
+        - infinity
+EOF
+
+# after pod running
+kubectl exec -it pgclient-0 -- bash
+
+```
+
 > 滚动方式重启一个deployment
 
 会先起新pod，ready之后再删旧pod，比较安全
