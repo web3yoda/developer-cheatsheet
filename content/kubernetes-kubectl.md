@@ -133,6 +133,9 @@ kubectl patch deployment nginx --type json -p='[{"op": "replace", "path": "/spec
 # change image to troubleshoot software version issue
 kubectl patch deployment nginx --type='json' -p='[{"op": "replace", "path": "/spec/template/spec/containers/0/image", "value":"nginx:1.21"}]'
 
+# change volume size of pvc
+kubectl patch pvc data-volume -p '{"spec": {"resources": {"requests": {"storage": "20Gi"}}}}'
+
 # or with set image sub cmd
 kubectl set image deployment/nginx nginx=nginx:1.21 
 
