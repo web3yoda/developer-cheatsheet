@@ -218,6 +218,25 @@ FROM pg_stat_activity
 WHERE datname = current_database() AND pid <> pg_backend_pid();
 ```
 
+### Create User Db and grant privileges for Specific App
+
+CREATE USER orders_user WITH PASSWORD 'StrongP@ssw0rd!';
+
+GRANT CONNECT ON DATABASE orders_db TO orders_user;
+
+\c orders_db
+
+GRANT USAGE, CREATE ON SCHEMA public TO orders_user;
+
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO orders_user;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO orders_user;
+GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public TO orders_user;
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO orders_user;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON SEQUENCES TO orders_user;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON FUNCTIONS TO orders_user;
+
+
 
 ### Tools
 - `ptop` and `pg_top`: `top` for PG. Available on the APT repository from `apt.postgresql.org`.
